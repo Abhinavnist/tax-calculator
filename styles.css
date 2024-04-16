@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 10%;
+  padding: 20px;
+  border: #0056b3 solid;
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0f544b;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input[type="number"],
+select {
+  width: calc(100% - 40px);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: textfield;
+}
+
+.question-mark {
+  margin-left: 5px;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.question-mark:hover::after {
+  content: attr(title);
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 10px;
+  width: auto;
+  max-width: 200px;
+}
+
+.error-icon {
+  display: none;
+  margin-top: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5px;
+  color: red;
+  cursor: help;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #0056b3;
+  border-radius: 4px;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  margin-top: 10px;
+  background-color: #0f544b;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Media Query for small screens */
+@media (max-width: 768px) {
+  .container {
+    max-width: none;
+    margin-top: 10%;
+    margin: 0;
+  }
+}

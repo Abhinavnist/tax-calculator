@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculation Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-rtzEcFBw1X7jgPmtQam1uQmd6UQD1jKD0T+VZ4TEudgMNb/YJj+p6sL3c5+Gfn2U" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tax Calculation Form</h1>
+        <form id="taxForm">
+
+            <div class="form-group">
+                <label for="income">
+                    Gross Annual Income:
+                    <i class="fas fa-question-circle question-mark"
+                        title="Gross Annual Income is your total salary in a year before any deductions"></i>
+                </label>
+                <input type="number" id="income" name="income">
+                <div class="error-icon" id="incomeErrorIcon"><i class="fas fa-exclamation-circle"></i></div>
+            </div>
+            <div class="form-group">
+                <label for="extraIncome">
+                    Enter Extra Income:
+                    <i class="fas fa-question-circle question-mark"
+                        title="Extra Income includes any additional earnings beyond your regular salary"></i>
+                </label>
+                <input type="number" id="extraIncome" name="extraIncome">
+                <div class="error-icon" id="extraIncomeErrorIcon"><i class="fas fa-exclamation-circle"></i></div>
+            </div>
+            <div class="form-group">
+                <label for="age">
+                    Enter Age Group:
+                    <i class="fas fa-question-circle question-mark"
+                        title="Select your age group to calculate tax based on age brackets"></i>
+                </label>
+                <select id="age" name="age">
+                    <option value="<40">&lt;40</option>
+                    <option value="≥40 &amp; <60">&ge;40 &lt;60</option>
+                    <option value="≥60">&ge;60</option>
+                </select>
+                <div class="error-icon" id="ageErrorIcon"><i class="fas fa-exclamation-circle"></i></div>
+            </div>
+            <div class="form-group">
+                <label for="deductions">
+                    Enter Total Applicable Deductions:
+                    <i class="fas fa-question-circle question-mark"
+                        title="Deductions are expenses that can be subtracted from your total income to reduce the amount of income subject to tax"></i>
+                </label>
+                <input type="number" id="deductions" name="deductions">
+                <div class="error-icon" id="deductionsErrorIcon"><i class="fas fa-exclamation-circle"></i></div>
+            </div>
+            <button type="submit">Calculate Tax</button>
+        </form>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="taxResult"></div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/60d102a738.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
